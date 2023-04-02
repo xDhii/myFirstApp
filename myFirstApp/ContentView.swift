@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State var showAlert = false
     @State var changeText = false
+    @State var stepperValue = 10
 
     var body: some View {
         VStack {
@@ -36,9 +37,15 @@ struct ContentView: View {
                 }
 
                 Spacer()
+            }
 
-            }.padding(.vertical, 20)
+        }.padding(.vertical, 20)
 
+        Stepper()
+
+        Stepper(value: $stepperValue, in: 1 ... 10) {
+            Text("Stepper \(self.stepperValue)")
+                .foregroundColor(Color("Primary Text"))
             Spacer()
 
             changeText ?
