@@ -37,15 +37,15 @@ struct ContentView: View {
                 }
 
                 Spacer()
+
+
+            }.padding(.vertical, 20)
+
+            Stepper(value: $stepperValue, in: 1 ... 10) {
+                Text("Stepper \(self.stepperValue)")
+                    .foregroundColor(Color("Primary Text"))
             }
-
-        }.padding(.vertical, 20)
-
-        Stepper()
-
-        Stepper(value: $stepperValue, in: 1 ... 10) {
-            Text("Stepper \(self.stepperValue)")
-                .foregroundColor(Color("Primary Text"))
+            
             Spacer()
 
             changeText ?
